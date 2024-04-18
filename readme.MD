@@ -8,4 +8,6 @@
 ''' git add <filename>
 * commit he chnages
 * push the chanages to github/central repo
+git push -u origin main
+
 ** naming convention:use mall case with hyphon**
