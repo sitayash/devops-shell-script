@@ -1,1 +1,3 @@
-this i dont wan t to puish
+#!/bin/bash
+
+echo "hello i am learning devops"
