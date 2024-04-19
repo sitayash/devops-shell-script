@@ -11,3 +11,8 @@
 git push -u origin main
 
 ** naming convention:use mall case with hyphon**
+#!/bin/bash
+
+echo "ramessh:hi suresh"
+
+echo "suresh:ramesh how are you"
