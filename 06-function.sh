@@ -24,21 +24,9 @@ else
      echo "you are super user."
 fi
          
-dnf install mysql -y 
+dnf install mysql -y &>>$LOGFILE
+VALIDATE $? "installing mysql"
 
-if [ $? -ne 0 ]
-then 
-    echo "installation if mysql..FAILURE"
-    exit 1
-else
-   echo "Installation of mysql...SUCCESS"
-fi       
+dnf install git -y &>>$LOGFILE
+VALIDATE $? "installing git"
 
-if [ $? -ne 0 ]
-then 
-    echo "installation if git..FAILURE"
-    exit 1
-else
-   echo "Installation of git...SUCCESS"
-fi   
-echo "is script proceeding?"    
