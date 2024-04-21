@@ -27,4 +27,9 @@ else
 fi
 
 dnf install mysql -y &>>$LOGFILE
-VALIDATE $? "installing mysql"
+VALIDATE $? "installing mysql server"
+
+systemctl enable mysqld &>>$LOGFILE
+VALIDATE $? "Enabling mysql server"
+systemctl start mysqld &>>$LOGFILE
+VALIDATE $? "setting up root passwprd"
