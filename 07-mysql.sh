@@ -26,7 +26,7 @@ else
      echo "you are super user."
 fi
 
-dnf install mysql -y &>>$LOGFILE
+dnf install mysql-server -y &>>$LOGFILE
 VALIDATE $? "installing mysql server"
 
 systemctl enable mysqld &>>$LOGFILE
