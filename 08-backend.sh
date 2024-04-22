@@ -43,3 +43,5 @@ else
     echo -e "expense ser alreadsy created...$Y skipping $N"    
 
 fi
+mkdir /app
+VALIDATE $?
