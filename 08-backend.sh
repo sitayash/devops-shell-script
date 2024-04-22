@@ -28,7 +28,7 @@ else
      echo "you are super user."
 fi
 dnf module disable nodejs -y &>>$LOGFILE
-VALIDATE $? "disablind defualt nodejs"
+VALIDATE $? "disabling defualt nodejs"
 
 dnf module enable nodejs:20 -y &>>$LOGFILE
 VALIDATE $? "enabling nodejs:20 version"
@@ -54,14 +54,17 @@ VALIDATE $? "Downloading backend code"
 cd /app
 rm -rf /app/*
 unzip /tmp/backend.zip &>>$LOGFILE
-VALIDATE $? "installing nodejs dependencies"
+VALIDATE $? "EXtracted backend code"
 
 npm install &>>$LOGFILE
-VALIDATE $? "Installing nodejs dependenci
+VALIDATE $? "Installing nodejs dependencies"
 
 
-cp /home/ec2-user/devops-shell-script/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
-VALIDATE $? "copied backend service
+cp  /home/ec2-user/devops-shell-script/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
+VALIDATE $? "Copied backend service"
+
+
+
 
 
 systemctl daemon-reload &>>$LOGFILE
