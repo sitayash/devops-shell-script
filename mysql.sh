@@ -14,8 +14,8 @@ VALIDATE $? "Enabling mysql server"
 systemctl start mysqld &>>$LOGFILE
 VALIDATE $? "starting mysql server"
 
-#mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
-#VALIDATE $? "setting up root password"
+mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
+VALIDATE $? "setting up root password"
 mysql -h 172.31.80.7 -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 
 if  [ $? -ne 0 ]
