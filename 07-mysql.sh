@@ -40,7 +40,7 @@ VALIDATE $? "starting mysql server"
 
 #mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
 #VALIDATE $? "setting up root password"
-mysql -h 172.31.87.32 -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
+mysql -h  -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 if  [ $? -ne 0 ]
 then  
  mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOGFILE  
